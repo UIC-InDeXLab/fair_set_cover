@@ -1,5 +1,5 @@
 # Fair Set Cover
-This repository contains the implemented algorithms and experiments for the 'Fair Set Cover' project.
+This repository contains the implemented algorithms and experiments for the '**Fair Set Cover**' project.
 
 # Requirements
 The minimum requirement to run the above implementations is Python `3.11.0`.
