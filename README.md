@@ -7,7 +7,7 @@ The minimum requirement to run the above implementations is Python `3.11.0`.
 # Guide
 The main implementations are in `.py` files. Each of these files can be executed independently using the following command: 
 ```
-python [file_name].py
+python experiments.py
 ```
 
 
