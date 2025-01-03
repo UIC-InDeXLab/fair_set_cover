@@ -1,18 +1,12 @@
-# -*- coding: utf-8 -*-
 # Import & Config
-import pandas as pd
 import numpy as np
 import copy
 import itertools
-import time
-import matplotlib.pyplot as plt
-import seaborn as sns
 from scipy.optimize import linprog
 import math
-import scipy.stats
 from itertools import product, combinations
 
-"""Utils"""
+"""Utility Functions"""
 
 def get_point_to_set_hashmap(sets):
     point_to_sets = {}
@@ -70,9 +64,9 @@ def get_extended_colors(ratios, L):
 
     return extended_colors
 
-"""Implementations"""
+"""Algorithms Implementations"""
 
-"""Greedy Standard"""
+"""Greedy Standard Set Cover"""
 def standard_set_cover(n, sets):
     # Pre-process
     sets = copy.deepcopy(sets)
@@ -99,7 +93,7 @@ def standard_set_cover(n, sets):
 
     return cover
 
-"""Naive Fair"""
+"""Naive Fair Set Cover"""
 def naive_fair_set_cover(n, sets, colors):
     # Pre-process
     sets = copy.deepcopy(sets)
@@ -181,6 +175,7 @@ def all_pick_fair_set_cover(n, sets, colors):
     return cover
 
 """Efficient All Pick (Faster Greedy for FSC)"""
+"""Runs an LP to find a good pair"""
 
 def approx_best_pair(sets, point_to_sets, color_to_sets, n, m, covered, sets_picked):
     '''
@@ -277,7 +272,7 @@ def efficient_pick_set_cover(n, sets, colors):
 
     return cover
 
-"""Generalized"""
+"""Generalized Set Cover for arbitrary 'Ratios'"""
 def generalized_all_pick(n, sets, colors, ratios):
     # Pre-process
     sets = copy.deepcopy(sets)
@@ -436,7 +431,7 @@ def eff_gen_pick(n, sets, colors, ratios):
 
     return cover
 
-"""## Optimum Solutions (Brute Force)"""
+"""Optimum Solutions (Bruteforce)"""
 def opt_standard_solution(n, sets, max_length):
     for cover_size in range(max_length + 1):
         for cover in itertools.combinations(sets, cover_size):
@@ -444,7 +439,7 @@ def opt_standard_solution(n, sets, max_length):
             if len(union) == n:
                 return [sets.index(c) for c in cover]
 
-"""### Fair Solution"""
+"""Optimum Fair Solution (Bruteforce)"""
 def opt_fair_solution(n, sets, colors, max_length):
     color_to_sets = get_color_to_set_hashmap(sets, colors)
     blue_sets = color_to_sets[0]
