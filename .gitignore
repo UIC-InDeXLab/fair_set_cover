@@ -94,6 +94,3 @@ dmypy.json
 # Ignore virtual environment folders
 **/venv/
 **/.venv/
-
-# Notebook output cells
-*.ipynb
