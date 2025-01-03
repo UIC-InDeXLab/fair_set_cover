@@ -2,7 +2,7 @@
 
 This repository hosts the algorithms and experimental code developed for the **Fair Set Cover** paper.
 
-*Dehghankar, M., Raychaudhury, R., Sintos, S., & Asudeh, A. (2024). Fair Set Cover. ArXiv. https://arxiv.org/abs/2405.11639*
+*Dehghankar, M., Raychaudhury, R., Sintos, S., & Asudeh, A. (2024). Fair Set Cover. ArXiv. https://arxiv.org/abs/2405.11639 (KDD'25)*
 
 <div style="display: flex; justify-content: space-around;">
     <img src="https://github.com/UIC-InDeXLab/fair_set_cover/blob/main/reports/popsim_vis.png" alt="Image 1 Description" width="30%" />
